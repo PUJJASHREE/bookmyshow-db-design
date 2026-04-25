@@ -65,3 +65,44 @@ INSERT INTO Show (movie_id, screen_id, show_date, start_time, end_time) VALUES
 (2, 1, '2026-04-25', '16:10:00', '18:30:00'),
 (2, 1, '2026-04-25', '20:20:00', '22:40:00'),
 (3, 2, '2026-04-25', '13:15:00', '15:30:00');
+
+-- =========================
+-- P2: Query to fetch shows
+-- =========================
+
+SELECT 
+    t.name AS theatre_name,
+    m.title AS movie_name,
+    m.language,
+    s.show_date,
+    s.start_time,
+    s.end_time,
+    sc.screen_name
+FROM Show s
+JOIN Movie m ON s.movie_id = m.movie_id
+JOIN Screen sc ON s.screen_id = sc.screen_id
+JOIN Theatre t ON sc.theatre_id = t.theatre_id
+WHERE t.theatre_id = 1
+AND s.show_date = '2026-04-25'
+ORDER BY s.start_time;
+
+## P2 - Fetch Shows by Theatre and Date
+
+### SQL Query
+
+```sql
+SELECT 
+    t.name AS theatre_name,
+    m.title AS movie_name,
+    m.language,
+    s.show_date,
+    s.start_time,
+    s.end_time,
+    sc.screen_name
+FROM Show s
+JOIN Movie m ON s.movie_id = m.movie_id
+JOIN Screen sc ON s.screen_id = sc.screen_id
+JOIN Theatre t ON sc.theatre_id = t.theatre_id
+WHERE t.theatre_id = 1
+AND s.show_date = '2026-04-25'
+ORDER BY s.start_time;
