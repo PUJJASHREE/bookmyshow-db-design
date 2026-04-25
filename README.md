@@ -100,3 +100,6 @@ INSERT INTO Show (movie_id, screen_id, show_date, start_time, end_time) VALUES
 - 2NF: No partial dependency (all columns depend on full primary key)
 - 3NF: No transitive dependency (non-key attributes depend only on primary key)
 - BCNF: Every determinant is a candidate key
+
+
+“P1 Completed”
