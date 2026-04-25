@@ -90,7 +90,7 @@ ORDER BY s.start_time;
 
 ### SQL Query
 
-```sql
+
 SELECT 
     t.name AS theatre_name,
     m.title AS movie_name,
